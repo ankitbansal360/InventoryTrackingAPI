@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Inventory.DAL.Repositories
 {
-    public interface ISalesOrder
+    public interface ISalesOrderRepo
     {
-        int OrderId { get; }
-        DateTime OrderDate { get; set; }
-        string CustomerName { get; set; }
-        decimal TotalAmount { get; }
-        List<Product> Products { get; }
+        public void AddSales(SalesOrderr sales);
 
-        void AddProduct(Product product);
-        void RemoveProduct(Product product);
-        decimal CalculateTotalAmount();
+        public void UpdateSales(SalesOrderr sales);
+
+        public void DeleteSales(int id);
+
+        public SalesOrderr GetSales(int id);
+
+        IEnumerable<SalesOrderr> GetAllSales();
     }
 }
